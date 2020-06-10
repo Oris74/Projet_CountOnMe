@@ -39,9 +39,7 @@ class CalcFormatter {
     
     init() {
         self.storedResult = false
-        self.isCreationDecimalValue = false
         resetFormula(defaultValue: "0")
-        resetHistory()
     }
     
     var formulaRowQantity: Int {
