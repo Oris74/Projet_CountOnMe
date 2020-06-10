@@ -39,7 +39,6 @@ class CalcFormatter {
     
     init() {
         self.storedResult = false
-<<<<<<< HEAD
         self.isCreationDecimalValue = false
         resetFormula(defaultValue: "0")
         resetHistory()
@@ -47,7 +46,7 @@ class CalcFormatter {
     
     var formulaRowQantity: Int {
         return historyOfFormulas.count - 1
-=======
+
         formula.append("0")
         historyOfFormulas.append(formula)
         
@@ -56,7 +55,7 @@ class CalcFormatter {
         self.numberFormatter.numberStyle = .decimal
         self.numberFormatter.maximumFractionDigits = 5
         self.numberFormatter.usesGroupingSeparator = true
->>>>>>> simplification
+
     }
     
     ///function used when numeric button is tapped
