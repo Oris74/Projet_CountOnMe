@@ -21,11 +21,13 @@ class FiguresTests: XCTestCase {
         super.setUp()
         figure = Figures()
         numberFormatter = NumberFormatter()
-        
-        self.numberFormatter.alwaysShowsDecimalSeparator = false
-        self.numberFormatter.numberStyle = .decimal
-        self.numberFormatter.maximumFractionDigits = 5
-        self.numberFormatter.usesGroupingSeparator = true
+        numberFormatter.groupingSeparator = " "
+        numberFormatter.decimalSeparator = ","
+
+        numberFormatter.alwaysShowsDecimalSeparator = false
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.maximumFractionDigits = 5
+        numberFormatter.usesGroupingSeparator = true
         
     }
     
@@ -68,7 +70,7 @@ class FiguresTests: XCTestCase {
         
         let result = figure.carryOutFormula(formula: formula, numberFormatter: numberFormatter)
         
-        XCTAssertEqual(result, "14 500")
+        XCTAssertEqual(result, "14 500")
     }
     
     ///test associativity in formula

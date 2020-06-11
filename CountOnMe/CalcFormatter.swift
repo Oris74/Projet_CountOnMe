@@ -13,7 +13,7 @@ class CalcFormatter {
     
     private let figure = Figures()
     
-    let numberFormatter: NumberFormatter
+    var numberFormatter: NumberFormatter
     
     private var storedResult: Bool
     
