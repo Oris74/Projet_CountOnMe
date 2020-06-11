@@ -11,7 +11,7 @@ import XCTest
 
 // MARK: calcFormatterDelegate in ClacFormatterTests
 extension CalcFormatterTests: CalcFormatterDelegate {
-    func didRefreshHistoryResult(screen: String) {
-         formulaTxt = screen
+    func didRefreshHistoryResult(history: String) {
+         formulaTxt = history
      }
 }

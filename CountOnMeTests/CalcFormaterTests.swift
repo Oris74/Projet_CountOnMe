@@ -73,13 +73,6 @@ class CalcFormatterTests: XCTestCase {
         calcFormatter.deleteElement(all: true)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
     /// test display of an addition on screen
     func testGiven12Plus12_WhenAddEqual_ThenResultDisplayEqual24() {
         getTappedDigit(digit: "1")
@@ -226,7 +219,7 @@ class CalcFormatterTests: XCTestCase {
         XCTAssertEqual(formulaTxt, "0")
     }
     
-    ///test multi line screen with old result recovered on the new line after Plus tapped
+    ///test multi line  with old result recovered on the new line after Plus tapped
     func testGiven2Plus4Egal6_WhenTappedPlus_ThenDisplayOldResultAndPlus () {
         getTappedDigit(digit: "2")
         getTappedOperator(calcOperator: "+")

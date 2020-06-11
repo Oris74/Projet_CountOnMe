@@ -13,7 +13,7 @@ class CalcFormatter {
     
     private let figure = Figures()
     
-    var numberFormatter: NumberFormatter
+    let numberFormatter: NumberFormatter
     
     private var storedResult: Bool
     
@@ -44,6 +44,7 @@ class CalcFormatter {
         historyOfFormulas.append(formula)
         
         self.numberFormatter = NumberFormatter()
+       
         self.numberFormatter.alwaysShowsDecimalSeparator = false
         self.numberFormatter.numberStyle = .decimal
         self.numberFormatter.maximumFractionDigits = 5
@@ -68,7 +69,7 @@ class CalcFormatter {
             }
         }
         formula.append(figure)
-        delegate?.didRefreshHistoryResult(screen: historyResultFormatter())
+        delegate?.didRefreshHistoryResult(history: historyResultFormatter())
     }
     
     ///function used when operator button is tapped (+,-,*,/)
@@ -84,7 +85,7 @@ class CalcFormatter {
         
         formula.append(operatorChar)
         
-        delegate?.didRefreshHistoryResult(screen: historyResultFormatter())
+        delegate?.didRefreshHistoryResult(history: historyResultFormatter())
     }
     
     ///manage  formulas per row for history
@@ -144,7 +145,7 @@ class CalcFormatter {
             }
         }
         
-        delegate?.didRefreshHistoryResult(screen: historyResultFormatter())
+        delegate?.didRefreshHistoryResult(history: historyResultFormatter())
     }
     
     ///function used when +/- button is tapped
@@ -161,7 +162,7 @@ class CalcFormatter {
         }
         formula.append(figure)
         
-        delegate?.didRefreshHistoryResult(screen: historyResultFormatter())
+        delegate?.didRefreshHistoryResult(history: historyResultFormatter())
     }
     
     ///function used when comma button is tapped
@@ -176,7 +177,7 @@ class CalcFormatter {
         let index = formula.endIndex - 1
         formula[index] = lastFigure
         
-        delegate?.didRefreshHistoryResult(screen: historyResultFormatter())
+        delegate?.didRefreshHistoryResult(history: historyResultFormatter())
     }
     
     ///function used when Equal button is tapped
@@ -191,7 +192,7 @@ class CalcFormatter {
         historyOfFormulas[currentHistoryRow].append(contentsOf: formula)
         storedResult = true
         
-        delegate?.didRefreshHistoryResult(screen: historyResultFormatter())
+        delegate?.didRefreshHistoryResult(history: historyResultFormatter())
         
         //init settings for a new row in history
         resetFormula(defaultValue: "0")

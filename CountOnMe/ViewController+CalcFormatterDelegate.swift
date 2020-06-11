@@ -10,7 +10,7 @@ import Foundation
 
 extension ViewController: CalcFormatterDelegate {
     // MARK: calcFormatterDelegate in ViewController
-    func didRefreshHistoryResult(screen: String) {
-        textView.text = screen
+    func didRefreshHistoryResult(history: String) {
+        textView.text = history
     }
 }

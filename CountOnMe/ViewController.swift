@@ -31,7 +31,9 @@ class ViewController: UIViewController {
         name = Notification.Name(rawValue: "DivByZeroError")
         NotificationCenter.default.addObserver(self, selector: #selector(divByZeroError), name: name, object: nil)
 
+        //disable the keyboard but keep focus to maintain the last row visible
         textView.becomeFirstResponder()
+        textView.inputView  = UIView()
         textView.isScrollEnabled = true
         textView.tintColor = .clear
     }

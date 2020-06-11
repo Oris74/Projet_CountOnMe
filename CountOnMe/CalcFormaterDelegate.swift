@@ -9,5 +9,5 @@
 import Foundation
 
 protocol CalcFormatterDelegate: AnyObject {
-    func didRefreshHistoryResult(screen: String)
+    func didRefreshHistoryResult(history: String)
 }
