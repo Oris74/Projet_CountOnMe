@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextViewDelegate {
+class ViewController: UIViewController {
     
     @IBOutlet weak var textView: UITextView!
     @IBOutlet var numberButtons: [UIButton]!
@@ -30,13 +30,10 @@ class ViewController: UIViewController, UITextViewDelegate {
         
         name = Notification.Name(rawValue: "DivByZeroError")
         NotificationCenter.default.addObserver(self, selector: #selector(divByZeroError), name: name, object: nil)
-        
-        textView.delegate = self
-        
+
         textView.becomeFirstResponder()
         textView.isScrollEnabled = true
         textView.tintColor = .clear
-        
     }
     
     /// View actions
