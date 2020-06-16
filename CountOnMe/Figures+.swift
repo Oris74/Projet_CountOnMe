@@ -10,12 +10,12 @@ import Foundation
 
 extension Figures {
     
-    func errorFormula() {
+    func errorFormulaNotification() {
         let name = Notification.Name(rawValue: "CarryOutError")
         let notification = Notification(name: name)
         NotificationCenter.default.post(notification)
     }
-    func errorDivByZero() {
+    func errorDivByZeroNotification() {
         let name = Notification.Name(rawValue: "DivByZeroError")
         let notification = Notification(name: name)
         NotificationCenter.default.post(notification)

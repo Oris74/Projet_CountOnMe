@@ -10,8 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var textView: UITextView!
-    @IBOutlet var numberButtons: [UIButton]!
+    @IBOutlet weak var screen: UITextView!
     
     private var processCalc: CalcFormatter
     
@@ -19,7 +18,6 @@ class ViewController: UIViewController {
         self.processCalc = CalcFormatter()
         super.init(coder: coder)
         processCalc.delegate = self
-        
     }
     
     // View Life cycles
@@ -31,11 +29,11 @@ class ViewController: UIViewController {
         name = Notification.Name(rawValue: "DivByZeroError")
         NotificationCenter.default.addObserver(self, selector: #selector(divByZeroError), name: name, object: nil)
 
-        //disable the keyboard but keep focus to maintain the last row visible
-        textView.becomeFirstResponder()
-        textView.inputView  = UIView()
-        textView.isScrollEnabled = true
-        textView.tintColor = .clear
+        //disable the keyboard but keep focus to maintain the visibility of the last row
+        screen.becomeFirstResponder()
+        screen.inputView  = UIView()
+        screen.isScrollEnabled = true
+        screen.tintColor = .clear
     }
     
     /// View actions

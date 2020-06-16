@@ -51,7 +51,7 @@ class Figures {
         case "/": if !isDivisionByZero(rightValue: right) {
             result = left / right
         } else {
-            errorDivByZero()
+            errorDivByZeroNotification()
             return false
             }
         default: return false
@@ -64,7 +64,7 @@ class Figures {
         resultTxt = nil
         
         if (formula.count).isMultiple(of: 2) {
-            errorFormula()
+            errorFormulaNotification()
             return nil
         }
         //fix formula out of the regional settings
